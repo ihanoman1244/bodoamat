@@ -8,8 +8,9 @@
 		"dev": "nodemon musico.js"
 	},
 	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Whirl21/Musico.git"
+		"main": "musico.js",
+    "type": "git",
+		"url": "git+https://github.com/ihanoman1244/bodoamat.git"
 	},
 	"keywords": [
 		"discord-js"
