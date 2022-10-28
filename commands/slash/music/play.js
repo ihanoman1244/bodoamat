@@ -71,7 +71,7 @@ module.exports = {
 			);
 		if (!track.playlist) {
 			const tr = track.tracks[0];
-			playEmbed.setThumbnail(tr.thumbnail);
+			
 			playEmbed.setDescription(`${tr.title}`);
 		}
 

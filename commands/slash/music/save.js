@@ -35,7 +35,7 @@ module.exports = {
 					.setColor(`RANDOM`)
 					.setTitle("⏳ | Saved Song")
 					.setDescription(queue.nowPlaying().title)
-					.setThumbnail(queue.nowPlaying().thumbnail)
+					
 					.addFields(
 						{
 							name: "Uploader",

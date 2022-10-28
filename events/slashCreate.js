@@ -13,7 +13,7 @@ module.exports = {
 			const cmdChannel = interaction.client.db.get(`${guild}_cmd_channel`);
 			if (cmdChannel !== channelId)
 				return interaction.reply(
-					`My commands are limited to <#${cmdChannel} in your guild!`
+					`My commands are limited to <#${cmdChannel}> in your guild!`
 				);
 		}
 		const roll = interaction.client.db.has(`${guild}_bl_role`);

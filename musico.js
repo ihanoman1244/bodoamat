@@ -1,7 +1,7 @@
 /*
 * @License GNU[2]
-* @Author: Whirl <hello@whirl.codes>
-Copyright (C) 2021 Whirl
+* @Author:HJGAMING
+Copyright (C) 2021 HJ GAMING
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -23,7 +23,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 const { Collection, Intents, Client } = require("discord.js");
 const { Player } = require("discord-player");
+const { readdirSync } = require("fs");
 const db = require("quick.db");
+
+require("./shard");
 const config = require("./musico.config");
 const handleEvents = require("./handlers/eventsHandler");
 const handleInteractions = require("./handlers/interactionHandlers");
@@ -54,6 +57,43 @@ handleEvents(client, `${__dirname}/events`);
 handlePlayer(client, `${__dirname}/events/player`);
 handleInteractions(client, __dirname);
 registrar(client);
+
+/**
+* hm
+*/
+
+
+/**
+* antiCrash
+*/
+
+process.on('multipleResolves', (type, promise, reason) => { // Needed
+    console.log('=== [antiCrash] | [multipleResolves] | [start] ===');
+    // console.log(type, promise, reason);
+    console.log('=== [antiCrash] | [multipleResolves] | [end] ===');
+  });
+  process.on('unhandledRejection', (reason, promise) => { // Needed
+    console.log('=== [antiCrash] | [unhandledRejection] | [start] ===');
+    console.log(reason);
+    console.log('=== [antiCrash] | [unhandledRejection] | [end] ===');
+  });
+  process.on('rejectionHandled', (promise) => { // If You Want You Can Use
+    console.log('=== [antiCrash] | [rejectionHandled] | [start] ===');
+    console.log(promise);
+    console.log('=== [antiCrash] | [rejectionHandled] | [end] ===');
+  })
+  process.on("uncaughtException", (err, origin) => { // Needed
+    console.log('=== [antiCrash] | [uncaughtException] | [start] ===');
+    console.log(err);
+    console.log('=== [antiCrash] | [uncaughtException] | [end] ===');
+  });
+  process.on('uncaughtExceptionMonitor', (err, origin) => { // Needed
+    console.log('=== [antiCrash] | [uncaughtExceptionMonitor] | [start] ===');
+    console.log(err);
+    console.log('=== [antiCrash] | [uncaughtExceptionMonitor] | [end] ===');
+  }); 
+
+
 /**
  * Login to the bot
  */
